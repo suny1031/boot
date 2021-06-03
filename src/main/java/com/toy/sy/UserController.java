@@ -54,12 +54,12 @@ public class UserController {
 
 
     @PutMapping("mybatis_update")
-    public ResponseEntity updateUser1(@Valid User user, BindingResult bindingResult){
+    public ResponseEntity mybatis_update(@Valid User user, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bindingResult.getAllErrors());
         }
 
-        userService.updateTest(user);
+        userService.mybatis_update(user);
         return ResponseEntity.ok(user);
     }
 

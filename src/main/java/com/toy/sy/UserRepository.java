@@ -26,6 +26,6 @@ public interface UserRepository {
     @Update("delete from USER where ID = #{ID}")
     public void deleteUser(User user);
 
-    public void updateTest(User user);
+    public void mybatis_update(User user);
 
 }

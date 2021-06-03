@@ -25,8 +25,8 @@ public class UserService {
         UserRepository.updateUser(user);
     }
 
-    public void updateTest(User user) {
-        UserRepository.updateTest(user);
+    public void mybatis_update(User user) {
+        UserRepository.mybatis_update(user);
     }
 
     public void deleteUser(User user) {
