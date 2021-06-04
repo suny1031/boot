@@ -21,7 +21,7 @@ public class UserValidator implements Validator {
         User persistInfo = (User) target;
 
         if (false) {
-            errors.rejectValue("ID","fail");
+            errors.rejectValue("ID", "fail");
 
         }
 

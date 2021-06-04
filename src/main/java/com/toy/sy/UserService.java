@@ -13,12 +13,16 @@ public class UserService {
         this.UserRepository = userRepository;
     }
 
-    public List<User> selectAll(){
+    public List<User> selectAll() {
         return UserRepository.selectAll();
     }
 
+    public String selectByID() {
+        return UserRepository.selectByID();
+    }
+
     public void insertUser(User user) {
-         UserRepository.insertUser(user);
+        UserRepository.insertUser(user);
     }
 
     public void updateUser(User user) {

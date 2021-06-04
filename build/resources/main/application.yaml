@@ -9,3 +9,10 @@ mybatis:
   mapper-locations: mapper/**/*.xml
 
 
+quartz:
+    scheduler-name: QuartzScheduler
+    properties:
+        org:
+            quartz:
+                threadPool:
+                    threadCount: 5

@@ -14,8 +14,11 @@ import java.util.List;
 @Repository
 public interface UserRepository {
 
-    @Select("select * from user")
+    @Select("select id from user order by id desc limit 1;")
     public List<User> selectAll();
+
+    @Select("select id from user order by id desc")
+    public String selectByID();
 
     @Insert("insert into toy.USER(ID,PASSWORD,TELL,EMAIL) values(#{ID},#{PASSWORD},#{TELL},#{EMAIL})")
     public void insertUser(User user);

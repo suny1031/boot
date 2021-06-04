@@ -20,7 +20,6 @@ public class UserController {
 
     }
 
-
     @GetMapping("test")
     public void join(){
         System.out.println(userService.selectAll().toString());
