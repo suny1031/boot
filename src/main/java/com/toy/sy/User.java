@@ -21,7 +21,6 @@ public class User {
 
     private String IS_DEL;
 
-
     public String getID() {
         return ID;
     }

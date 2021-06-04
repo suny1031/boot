@@ -20,7 +20,7 @@ public interface UserRepository {
     @Select("select id from user order by id desc")
     public String selectByID();
 
-    @Insert("insert into toy.USER(ID,PASSWORD,TELL,EMAIL) values(#{ID},#{PASSWORD},#{TELL},#{EMAIL})")
+    @Insert("insert into toy.USER(ID,PASSWORD,TELL,EMAIL) values(NEXTVAL(sc_id),#{PASSWORD},#{TELL},#{EMAIL})")
     public void insertUser(User user);
 
     @Update("update USER set PASSWORD = #{PASSWORD}, TEll =#{TELL}, EMAIL = #{EMAIL} where ID = #{ID}")

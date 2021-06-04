@@ -1,18 +1,33 @@
 spring:
-    datasource:
-        driver-class-name: org.mariadb.jdbc.Driver
-        url: jdbc:mariadb://localhost:3306/toy
-        username: root
-        password: 123
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/toy
+    username: root
+    password: 123
 
 mybatis:
   mapper-locations: mapper/**/*.xml
 
 
-quartz:
-    scheduler-name: QuartzScheduler
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never
     properties:
-        org:
-            quartz:
-                threadPool:
-                    threadCount: 5
+      org:
+        quartz:
+          scheduler:
+            instanceId: AUTO
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            useProperties: false
+            tablePrefix: QRTZ_
+            misfireThreshold: 60000
+            clusterCheckinInterval: 1000
+            isClustered: true
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
