@@ -21,13 +21,13 @@ public class UserController {
     }
 
     @GetMapping("test")
-    public void join(){
+    public void join() {
         System.out.println(userService.selectAll().toString());
 
     }
 
     @PostMapping("join")
-    public ResponseEntity join(@Valid User user, BindingResult bindingResult){
+    public ResponseEntity join(@Valid User user, BindingResult bindingResult) {
         System.out.println("join");
         if (bindingResult.hasErrors()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bindingResult.getAllErrors());
@@ -39,21 +39,21 @@ public class UserController {
     }
 
     @PutMapping("update")
-    public void update(User user){
+    public void update(User user) {
         System.out.println(user.toString());
         userService.updateUser(user);
 
     }
 
     @DeleteMapping("delete")
-    public void delete(User user){
+    public void delete(User user) {
         System.out.println(user.toString());
         userService.deleteUser(user);
     }
 
 
     @PutMapping("mybatis_update")
-    public ResponseEntity mybatis_update(@Valid User user, BindingResult bindingResult){
+    public ResponseEntity mybatis_update(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(bindingResult.getAllErrors());
         }

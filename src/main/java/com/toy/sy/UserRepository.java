@@ -15,10 +15,10 @@ import java.util.List;
 public interface UserRepository {
 
     @Select("select id from user order by id desc limit 1;")
-    public List<User> selectAll();
-
-    @Select("select id from user order by id desc")
     public String selectByID();
+
+    @Select("select * from user order by id asc")
+    public List<User> selectAll();
 
     @Insert("insert into toy.USER(ID,PASSWORD,TELL,EMAIL) values(NEXTVAL(sc_id),#{PASSWORD},#{TELL},#{EMAIL})")
     public void insertUser(User user);

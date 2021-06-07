@@ -1,20 +1,20 @@
 com/toy/sy/User.java
  com.toy.sy.User
-com/toy/sy/UserController.java
- com.toy.sy.UserController
-com/toy/sy/UserService.java
- com.toy.sy.UserService
 com/toy/sy/UserRepository.java
  com.toy.sy.UserRepository
+com/toy/sy/UserService.java
+ com.toy.sy.UserService
 com/toy/sy/validator/UserValidator.java
  com.toy.sy.validator.UserValidator
-com/toy/sy/MainController.java
- com.toy.sy.MainController
 com/toy/Application.java
  com.toy.Application
-com/toy/sy/QuartzService.java
- com.toy.sy.QuartzService
-com/toy/sy/BatchService.java
- com.toy.sy.BatchService
-com/toy/sy/QuartzJob.java
- com.toy.sy.QuartzJob
+com/toy/sy/UserJob.java
+ com.toy.sy.UserJob
+com/toy/sy/UserController.java
+ com.toy.sy.UserController
+com/toy/sy/MainController.java
+ com.toy.sy.MainController
+com/toy/sy/SyApplication.java
+ com.toy.sy.SyApplication
+com/toy/sy/UserScheduler.java
+ com.toy.sy.UserScheduler

@@ -1,10 +1,15 @@
 package com.toy.sy;
 
 import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+@Getter
+@Setter
+@ToString
 public class User {
 
     @Pattern(regexp = "^[a-z]{8,}$", message = "소문자 영어만 가능(8글자)")
@@ -21,55 +26,8 @@ public class User {
 
     private String IS_DEL;
 
-    public String getID() {
-        return ID;
-    }
 
-    public void setID(String ID) {
-        this.ID = ID;
-    }
 
-    public String getPASSWORD() {
-        return PASSWORD;
-    }
 
-    public void setPASSWORD(String PASSWORD) {
-        this.PASSWORD = PASSWORD;
-    }
-
-    public String getTELL() {
-        return TELL;
-    }
-
-    public void setTELL(String TELL) {
-        this.TELL = TELL;
-    }
-
-    public String getEMAIL() {
-        return EMAIL;
-    }
-
-    public void setEMAIL(String EMAIL) {
-        this.EMAIL = EMAIL;
-    }
-
-    public String getIS_DEL() {
-        return IS_DEL;
-    }
-
-    public void setIS_DEL(String IS_DEL) {
-        this.IS_DEL = IS_DEL;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "ID='" + ID + '\'' +
-                ", PASSWORD='" + PASSWORD + '\'' +
-                ", TELL='" + TELL + '\'' +
-                ", EMAIL='" + EMAIL + '\'' +
-                ", IS_DEL='" + IS_DEL + '\'' +
-                '}';
-    }
 }
 
