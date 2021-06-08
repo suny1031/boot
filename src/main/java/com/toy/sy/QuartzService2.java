@@ -1,5 +1,6 @@
 package com.toy.sy;
 
+import lombok.RequiredArgsConstructor;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.stereotype.Component;
@@ -7,10 +8,11 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 @Component
-public class UserScheduler {
+public class QuartzService2 {
 
     private SchedulerFactory schedulerFactory;
-    private Scheduler scheduler;
+
+    private  Scheduler scheduler;
 
     @PostConstruct
     public void start() throws SchedulerException {
@@ -19,8 +21,14 @@ public class UserScheduler {
         scheduler = schedulerFactory.getScheduler();
         scheduler.start();
 
+
         //jobDetail 생성( Job 지정하고 실행하기 위한 상세 정보 )
         JobDetail job = JobBuilder.newJob(UserJob.class).withIdentity("testJob").build();
+
+
+        if (scheduler.checkExists(job.getKey())) {
+            scheduler.deleteJob(job.getKey());
+        }
 
         //trigger 생성
         Trigger trigger = TriggerBuilder.newTrigger().
@@ -28,6 +36,6 @@ public class UserScheduler {
 
         scheduler.scheduleJob(job, trigger);
 
-}
+    }
 
 }

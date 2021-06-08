@@ -4,30 +4,28 @@ spring:
     url: jdbc:mariadb://localhost:3306/quartz
     username: root
     password: 123
-
-mybatis:
-  mapper-locations: mapper/**/*.xml
-
-
   quartz:
     job-store-type: jdbc
     jdbc:
-      initialize-schema: always
-    properties:
-      org:
-        quartz:
-          scheduler:
-            instanceId: AUTO
-          jobStore:
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
-            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-            useProperties: false
-            tablePrefix: qrtz_
-            misfireThreshold: 60000
-            clusterCheckinInterval: 1000
-            isClustered: true
-          threadPool:
-            class: org.quartz.simpl.SimpleThreadPool
-            threadCount: 10
-            threadPriority: 5
-            threadsInheritContextClassLoaderOfInitializingThread: true
+      initialize-schema: never
+      properties:
+        org:
+          quartz:
+            scheduler:
+              instanceId: AUTO
+            jobStore:
+              class: org.quartz.impl.jdbcjobstore.JobStoreTX
+              driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+              useProperties: false
+              tablePrefix: QRTZ_
+              misfireThreshold: 60000
+              clusterCheckinInterval: 1000
+              isClustered: true
+            threadPool:
+              class: org.quartz.simpl.SimpleThreadPool
+              threadCount: 10
+              threadPriority: 5
+              threadsInheritContextClassLoaderOfInitializingThread: true
+
+mybatis:
+  mapper-locations: mapper/**/*.xml
