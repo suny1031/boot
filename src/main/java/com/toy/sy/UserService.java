@@ -1,5 +1,6 @@
 package com.toy.sy;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -8,10 +8,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 public class SyApplication {
 
-
-    //@Autowired
-    private UserService userScheduler; // 스케줄러
-
     public static void main(String[] args) {
         SpringApplication.run(SyApplication.class, args);
     }

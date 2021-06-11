@@ -1,6 +1,8 @@
 package com.toy.sy;
 
 import com.toy.sy.validator.UserValidator;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -8,10 +10,10 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.logging.Logger;
 
 @RestController
 public class UserController {
-
 
     private final UserService userService;
 
@@ -22,6 +24,7 @@ public class UserController {
 
     @GetMapping("test")
     public void join() {
+
         System.out.println(userService.selectAll().toString());
 
     }
