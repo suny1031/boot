@@ -20,6 +20,9 @@ public interface UserRepository {
     @Select("select * from user order by id asc")
     public List<User> selectAll();
 
+    @Insert("insert into toy.USER(ID, PASSWORD, TELL, EMAIL) values('test1', 'test','010-1111-1111','test@naver.com')")
+    public void insertTest();
+
     @Insert("insert into toy.USER(ID,PASSWORD,TELL,EMAIL) values(NEXTVAL(sc_id),#{PASSWORD},#{TELL},#{EMAIL})")
     public void insertUser(User user);
 

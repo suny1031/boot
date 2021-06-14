@@ -2,6 +2,7 @@ package com.toy.sy;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class UserService {
     }
 
     public List<User> selectAll() {
-        return UserRepository.selectAll();
+        return  UserRepository.selectAll();
     }
 
     public String selectByID() {
@@ -23,6 +24,7 @@ public class UserService {
     }
 
     public void insertUser(User user) {
+        UserRepository.insertTest();
         UserRepository.insertUser(user);
     }
 
